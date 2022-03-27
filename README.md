@@ -12,17 +12,25 @@ Features:
 * An [.editorconfig](http://editorconfig.org/) file
 * Command-line argument parsing and color output support with [Click](https://click.palletsprojects.com/en/8.0.x/)
 
-# Getting Started
+## Getting Started
 
-The project is ready to run as is. You will need Python 3.6 or later and [Pipenv](https://pipenv.pypa.io/en/latest/).
+This template uses [pipenv](https://pipenv.pypa.io/en/latest/) to manage dependencies and its virtual environment. You will need to install it if you do not already have it.
 
-## Installation
+### Using the template
 
-After cloning or downloading the repo, install the project with:
+To use the template, click the **Use this template** button in the [Github repository](https://github.com/keathmilligan/python-app-template) to create a new project using this code as a basis. Alternatively, you can clone the repository locally.
+
+### Install dependencies
+
+> The template currently expects Python 3.10, if you need to use an older version, you will need to modify the `Pipfile`.
+
+Use [pipenv](https://pipenv.pypa.io/en/latest/) to create a virtual environment and install the dependencies:
 
 ```
-pipenv install
+pipenv install --dev
 ```
+
+The `--dev` option will also install the optional development dependencies such as `pylint` and `pytest`.
 
 ## Running
 
