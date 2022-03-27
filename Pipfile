@@ -10,6 +10,7 @@ colorama = "*"
 [dev-packages]
 pylint = "*"
 pytest = "*"
+black = "*"
 
 [requires]
 python_version = "3.10"

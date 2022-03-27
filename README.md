@@ -8,7 +8,7 @@ This repo provides a standardized template for Python application projects.
 Features:
 * Predictable installation and package management with [Pipenv](https://pipenv.pypa.io/en/latest/).
 * PyTest unit-test support
-* PyLint
+* PyLint and Black
 * An [.editorconfig](http://editorconfig.org/) file
 * Command-line argument parsing and color output support with [Click](https://click.palletsprojects.com/en/8.0.x/)
 
@@ -53,3 +53,26 @@ pipenv run python -m sample
 ```
 pipenv run pytest
 ```
+
+## Adding command-line arguments and options
+
+See `sample/cli.py` for an example command argument processor:
+
+```python
+@click.command()
+@click.option("-a", "--alpha", default="avalue", help="Option A.")
+@click.option("-b", "--beta", default="bvalue", help="Option B.")
+def cli(alpha, beta):
+    """
+    Command-line example
+    """
+    click.echo("Option A: ", nl=False)
+    click.secho(alpha, fg="red", bold=True, nl=False)
+    click.echo(" Option B: ", nl=False)
+    click.secho(beta, fg="blue", bold=True)
+    result = my_func(alpha, beta)
+    click.echo("Result: ", nl=False)
+    click.secho(result, fg="bright_white", bg="green", bold=True)
+```
+
+This processor will be used when the `sample` package is invoked as a command (as above). Refer to the [Click documentation](https://click.palletsprojects.com/en/8.0.x/) for info on adding your own options and command line arguments.
